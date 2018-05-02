@@ -23,8 +23,22 @@ define('circles', ['d3'], function (d3) {
             .attr("cx", function (d, i) {return x(i);})
             .attr("cy", height / 2)
             .attr("r", 20)
-            .style("fill", "#1570a4")
-            .style("opacity", 0.8)
+            .style("fill", "#1f77b4")
+            .style("opacity", 0.7)
+            .on('mouseover', function() {
+                d3.select(this)
+                  .interrupt('fade')
+                  .style('fill', '#ff7f0e')
+                  .style("opacity", 1)
+                  .attr("r", function (d) {return 1.1 * d + 10;});
+            })
+            .on('mouseout', function() {
+                d3.select(this)
+                    .transition('fade').duration(500)
+                    .style("fill", "#1f77b4")
+                    .style("opacity", 0.7)
+                    .attr("r", function (d) {return d;});
+            })
             .transition().duration(2000)
             .attr("r", function (d) {return d;});
     }
