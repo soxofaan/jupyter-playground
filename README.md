@@ -1,2 +1,2 @@
 
-Just a random collection of Jupyter notebooks
+Just a random collection of Jupyter notebooks.
