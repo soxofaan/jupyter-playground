@@ -3,10 +3,9 @@ require.undef('circles');
 
 define('circles', ['d3'], function (d3) {
 
-    var width = 600;
-    var height = 200;
-
-    function draw(container, data) {
+    function draw(container, data, width, height) {
+        width = width || 600;
+        height = height || 200;
         var svg = d3.select(container).append("svg")
             .attr('width', width)
             .attr('height', height)
@@ -28,7 +27,7 @@ define('circles', ['d3'], function (d3) {
             .on('mouseover', function() {
                 d3.select(this)
                   .interrupt('fade')
-                  .style('fill', '#ff7f0e')
+                  .style('fill', '#ff850e')
                   .style("opacity", 1)
                   .attr("r", function (d) {return 1.1 * d + 10;});
             })
