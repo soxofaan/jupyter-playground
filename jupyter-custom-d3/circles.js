@@ -45,4 +45,4 @@ define('circles', ['d3'], function (d3) {
     return draw;
 });
 
-element.append('Loaded circles.js');
+element.append('<small>&#x25C9; &#x25CB; &#x25EF; Loaded circles.js &#x25CC; &#x25CE; &#x25CF;</small>');
